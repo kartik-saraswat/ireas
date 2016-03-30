@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:layout_marginTop="15dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="100"
+        android:background="#0ed19a"
+        android:layout_marginTop="15dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Roll number"
+            android:id="@+id/lblrollno"
+
+            android:layout_weight="109.04"
+            android:textSize="@dimen/abc_text_size_medium_material"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:text="Take"
+
+            android:id="@+id/btntkatten"
+            android:background="#d13654"
+            android:textSize="@dimen/abc_text_size_medium_material"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="#0ed19a"
+        >
+        <TextView
+            android:layout_width="243dp"
+            android:layout_height="match_parent"
+            android:text="Student name"
+            android:id="@+id/lblstunamw"
+            android:textSize="@dimen/abc_text_size_medium_material"
+            android:textColor="#ffffff" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkbox"
+
+            android:layout_weight="0.05"
+            android:checked="false" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

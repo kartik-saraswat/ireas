@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Implementation-Title: Project Ireas
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.project.ireas
+Build-Jdk: 1.7.0_80
+Built-By: root
+Created-By: Maven Integration for Eclipse
+

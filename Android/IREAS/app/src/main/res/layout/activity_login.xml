@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+>
+
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtusername"
+        android:hint="User Name"
+
+        android:textColor="#0ed19a"
+        android:textColorHint="#0ed19a"
+        android:textColorHighlight="#0ed19a"
+        android:textSize="@dimen/abc_text_size_large_material" />
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtpassword"
+            android:hint="Password"
+            android:password="true"
+            android:textColor="#0ed19a"
+            android:textColorHint="#0ed19a"
+            android:textSize="@dimen/abc_text_size_large_material"
+            android:textColorHighlight="#0ed19a" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        >
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:id="@+id/btnlogin"
+            android:gravity="center"
+            android:background="#d13654"
+            android:textSize="@dimen/abc_text_size_large_material"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txterror"/>
+        </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtinfo"/>
+    </LinearLayout>
+
+</LinearLayout>

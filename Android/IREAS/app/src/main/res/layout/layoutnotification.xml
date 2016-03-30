@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    android:layout_marginTop="15dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="#0ed19a">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="examname"
+            android:id="@+id/lblexamname"
+            android:layout_weight="0.24"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/abc_text_size_menu_material" /><![CDATA[
+        />
+
+        ]]>
+
+        <Button
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:text="Start Exam"
+            android:layout_gravity="right"
+            android:id="@+id/btnexamstart"
+            android:textSize="@dimen/abc_text_size_medium_material"
+            android:background="#d13654"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="#0ed19a"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exam Code"
+            android:id="@+id/lblexamcode"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/abc_text_size_small_material" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:id="@+id/lbltime"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/abc_text_size_small_material" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Room no"
+            android:id="@+id/lblroomno"
+            android:layout_weight="1"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/abc_text_size_small_material" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

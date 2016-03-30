@@ -1,0 +1,95 @@
+CREATE TABLE `ireas_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `role` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `program_master` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `code` varchar(5) NOT NULL,
+  `department_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_program_master_1_idx` (`department_id`),
+  CONSTRAINT `fk_program_master_1` FOREIGN KEY (`department_id`) REFERENCES `department_master` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `department_master` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) NOT NULL,
+  `code` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+
+CREATE TABLE `exam` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_id` int(11) NOT NULL,
+  `invigilator_id` int(11) NOT NULL,
+  `exam_start_time` datetime NOT NULL,
+  `exam_type_id` int(11) NOT NULL,
+  `room` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_exam_1_idx` (`course_id`),
+  KEY `fk_exam_2_idx` (`exam_type_id`),
+  KEY `fk_exam_3_idx` (`invigilator_id`),
+  CONSTRAINT `fk_exam_1` FOREIGN KEY (`course_id`) REFERENCES `course_master` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_exam_2` FOREIGN KEY (`exam_type_id`) REFERENCES `exam_type_master` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_exam_3` FOREIGN KEY (`invigilator_id`) REFERENCES `ireas_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `exam_type_master` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(45) NOT NULL,
+  `duration` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+
+
+CREATE TABLE `course_master` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) NOT NULL,
+  `code` varchar(45) NOT NULL,
+  `program_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_course_master_1_idx` (`program_id`),
+  CONSTRAINT `fk_course_master_1` FOREIGN KEY (`program_id`) REFERENCES `program_master` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `course_student` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  KEY `fk_course_student_1_idx` (`course_id`),
+  KEY `fk_course_student_2_idx` (`student_id`),
+  CONSTRAINT `fk_course_student_1` FOREIGN KEY (`course_id`) REFERENCES `course_master` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_course_student_2` FOREIGN KEY (`student_id`) REFERENCES `ireas_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+
+
+
+CREATE TABLE `attendance` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `exam_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
+  `attendance` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `fk_attendance_1_idx` (`student_id`),
+  KEY `fk_attendance_2_idx` (`exam_id`),
+  CONSTRAINT `fk_attendance_1` FOREIGN KEY (`student_id`) REFERENCES `ireas_user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_attendance_2` FOREIGN KEY (`exam_id`) REFERENCES `exam` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+
+
+

@@ -1,0 +1,8 @@
+template: Hello, %s!
+defaultName: Stranger
+
+database:
+  driverClass : com.mysql.jdbc.Driver
+  url: 'jdbc:mysql://localhost:3306/ireasdb'
+  user: root
+  password: kartikkartik

@@ -1,0 +1,3 @@
+set solib-search-path /home/kartik/ireasproject/IREAS/app/src/main/obj/local/armeabi-v7a
+source /home/kartik/Android/Sdk/ndk-bundle/prebuilt/common/gdb/common.setup
+directory /home/kartik/Android/Sdk/ndk-bundle/platforms/android-17/arch-arm/usr/include /home/kartik/Downloads/OpenCV-android-sdk/sdk/native/jni/include/opencv /home/kartik/Downloads/OpenCV-android-sdk/sdk/native/jni/include /home/kartik/ireasproject/IREAS/app/src/main/jni /home/kartik/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.8/include /home/kartik/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a/include /home/kartik/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.8/include/backward
